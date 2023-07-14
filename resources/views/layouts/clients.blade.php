@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="{{asset('clients/assets/css/style.css')}}">
      <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 
+     @yield('css')
 
 </head>
 <body>
@@ -32,7 +33,7 @@
     <div id="wrapper">
 
         <!-- Header -->
-        @include('clients.block.header')
+        @include('clients.blocks.header')
 
         <!-- sidebar -->
         @include('clients.blocks.sidebar')
@@ -90,5 +91,6 @@
     <script src="{{asset('clients/assets/js/bootstrap-select.min.js')}}"></script>
     <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
 
+    @yield('js')
 </body>
 </html>
