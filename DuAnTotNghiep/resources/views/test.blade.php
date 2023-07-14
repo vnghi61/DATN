@@ -1,1 +1,1 @@
-view test
+xin chào các bạn
