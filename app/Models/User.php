@@ -11,7 +11,7 @@ use Laravel\Sanctum\HasApiTokens;
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
-
+    protected $primaryKey = 'user_id';
     /**
      * The attributes that are mass assignable.
      *
@@ -42,4 +42,13 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+    public function getAuthPassword()
+    {
+        return $this->user_password;
+    }
+    public function validateCredentials(array $credentials)
+    {
+        $plain = $credentials['password'];
+        return $this->hasher->check($plain, $this->getAuthPassword());
+    }
 }

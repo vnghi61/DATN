@@ -70,7 +70,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Asia/Ho_Chi_Minh',
 
     /*
     |--------------------------------------------------------------------------
@@ -168,6 +168,10 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
+        Livewire\LivewireServiceProvider::class,
+
+
     ])->toArray(),
 
     /*
@@ -182,6 +186,10 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
+        'Helper'        => App\Helpers\Helper::class,
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
+        'Carbon' => Carbon\Carbon::class,
+
         // 'Example' => App\Facades\Example::class,
     ])->toArray(),
 
